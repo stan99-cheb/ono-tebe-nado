@@ -21,12 +21,9 @@ header {
 }
 
 .header__link {
-  cursor: pointer;
-}
-
-.header__link {
   text-decoration: underline;
   text-underline-offset: 4px;
+  cursor: pointer;
 }
 
 .header__link_active {
@@ -79,6 +76,12 @@ header {
   line-height: 100px;
   letter-spacing: calc(1em * 3 / 10);
   text-transform: uppercase;
+}
+
+.aligned-text {
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
 }
 
 .aligned-text_center {
@@ -149,8 +152,6 @@ header {
 
   list-style-type: none;
 }
-
-.lots__card-list-item {}
 
 .card-link {
   cursor: pointer;
@@ -280,8 +281,6 @@ footer {
   line-height: 22px;
 }
 
-.footer__menu-list-item {}
-
 .footer__menu-link {
   text-decoration: underline;
   cursor: pointer;
@@ -300,8 +299,6 @@ footer {
   list-style-type: none;
   font-size: 0;
 }
-
-.footer__social-list-item {}
 
 .footer__social-link {
   cursor: pointer;
