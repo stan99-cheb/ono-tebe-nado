@@ -1,17 +1,15 @@
-header {
-  margin: 96px 24px;
+.header {
+  margin: 92px 24px 92px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-
-  font-size: 18px;
-  line-height: 24px;
 }
 
 .header__links-list {
   display: flex;
-  column-gap: 30px;
+  justify-content: flex-end;
+  column-gap: 35px;
 
   list-style-type: circle;
 }
@@ -21,6 +19,9 @@ header {
 }
 
 .header__link {
+  font-size: 18px;
+  line-height: 22px;
+  word-spacing: .01em;
   text-decoration: underline;
   text-underline-offset: 4px;
   cursor: pointer;
@@ -35,12 +36,15 @@ header {
 .header__logo {
   margin-right: 184px;
   padding-left: 36px;
-  width: 148px;
+  width: 186px;
   height: 105px;
 }
 
 .header__address {
-  width: 240px;
+  max-width: 240px;
+  width: 100%;
+  font-size: 18px;
+  line-height: 24px;
   font-style: normal;
   text-underline-offset: 4px;
 }
@@ -49,14 +53,12 @@ header {
 
 .cover {
   margin-bottom: 180px;
-  height: 757px;
+  min-height: 757px;
   position: relative;
-  font-size: 0;
-}
 
-.cover__image {
-  object-fit: cover;
-  height: 100%;
+  background-image: url(../images/cover.jpg);
+  background-size: cover;
+  background-position: center center;
 }
 
 .overlay {
@@ -66,9 +68,7 @@ header {
 }
 
 .title {
-  position: absolute;
-  inset: 165px 50px 240px;
-  z-index: 1;
+  padding: 175px 50px 110px;
 
   color: white;
   font-size: 100px;
@@ -78,10 +78,9 @@ header {
   text-transform: uppercase;
 }
 
-.aligned-text {
-  margin-bottom: 20px;
-  display: inline-block;
-  width: 100%;
+.title>span {
+  margin-bottom: 24px;
+  display: block;
 }
 
 .aligned-text_center {
@@ -101,32 +100,32 @@ header {
 }
 
 .cover__description {
+  padding: 0 50px 0 78px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
 
-  position: absolute;
-  right: 50px;
-  bottom: 51px;
-  left: 80px;
-  z-index: 1;
-
+.cover__description-text {
   font-size: 22px;
   line-height: 28px;
-  word-spacing: calc(1em * 9 / 10);
+  word-spacing: .85em;
   text-transform: uppercase;
   color: white;
 }
 
 .bet-button {
-  padding: 12px 32px;
+  padding: 12px 32px 11px;
   border: 1px solid white;
   background-color: transparent;
 
+  font-family: inherit;
   font-size: 22px;
   font-weight: 500;
-  line-height: 24px;
-  color: inherit;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: white;
 }
 
 .lots {
@@ -135,7 +134,7 @@ header {
 }
 
 .lots__heading {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
   padding-left: 40px;
 
   font-size: 40px;
@@ -148,7 +147,8 @@ header {
   margin-bottom: 30px;
 
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 25px;
 
   list-style-type: none;
 }
@@ -158,26 +158,9 @@ header {
 }
 
 .card {
+  padding: 51px 39px 48px 40px;
   width: 334px;
-  height: 564px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  position: relative;
-}
-
-.card_type_film {
-  object-fit: cover;
-  height: 100%;
-}
-
-.card__container {
-  padding: 40px;
-
-  position: absolute;
-  inset: 0;
+  min-height: 563px;
 
   display: flex;
   flex-direction: column;
@@ -186,10 +169,28 @@ header {
   color: white;
 }
 
+.card_type_film {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-01.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.card_type_book {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-02.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.card_type_picture {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-03.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
 .card__title {
   font-size: 22px;
   font-weight: 700;
-  line-height: 28px;
+  line-height: 26px;
   text-decoration: underline;
   text-transform: uppercase;
   text-underline-offset: 4px;
@@ -198,6 +199,7 @@ header {
 .card__text {
   font-size: 20px;
   line-height: 24px;
+  vertical-align: bottom;
 }
 
 .lots__look-more-link {
@@ -206,6 +208,7 @@ header {
   font-size: 20px;
   line-height: 24px;
   text-decoration: underline;
+  text-underline-offset: 5px;
 }
 
 .about {
@@ -215,7 +218,7 @@ header {
   display: grid;
   grid-template-columns: 334px 1fr;
   grid-template-rows: 1fr;
-  gap: 0px 30px;
+  gap: 0px 25px;
   grid-template-areas:
     "logo about";
 }
@@ -226,7 +229,7 @@ header {
 }
 
 .about__logo {
-  margin-top: 35px;
+  margin-top: 37px;
   width: 240px;
   height: 240px;
   border-radius: 50%;
@@ -248,7 +251,7 @@ header {
 }
 
 .about__title {
-  margin: 140px 0 100px;
+  margin: 138px 0 100px;
   font-size: 40px;
   font-weight: 700;
   line-height: 48px;
@@ -256,9 +259,13 @@ header {
 }
 
 .about__text {
+  margin-bottom: 24px;
   font-size: 20px;
   line-height: 24px;
-  letter-spacing: 1%;
+}
+
+.about__text:last-child {
+  margin-bottom: 0;
 }
 
 /* Footer */
@@ -270,6 +277,15 @@ footer {
   justify-content: space-between;
 }
 
+.footer__address {
+  width: 240px;
+  font-size: 18px;
+  font-style: normal;
+  line-height: 24px;
+  text-underline-offset: 4px;
+  letter-spacing: .01em;
+}
+
 .footer__menu-list {
   margin: 0 185px;
   display: flex;
@@ -278,7 +294,8 @@ footer {
 
   list-style-type: none;
   font-size: 18px;
-  line-height: 22px;
+  line-height: 21px;
+  text-underline-offset: 5px;
 }
 
 .footer__menu-link {
